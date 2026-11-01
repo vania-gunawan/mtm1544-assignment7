@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6: Grid Page Layout</title>
+    <link rel="stylesheet" href="css/styles.css">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Sora:wght@100..800&display=swap');
+        </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="logo">
+            <img src="images/BB-logo-color.jpg" alt="Bellis Blossom Logo with Colour">
+        </div>
+       
+        <nav class="nav" aria-label="main navigation">
+            <a href="#">Home</a>
+            <a href="#">Collections</a>
+            <a href="#">Projects</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Log in</a>
+        </nav>     
+    </header>
+
+    <main id="main">
+        <section class="hero-section">
+             <img class="hero-image" src="images/hero.jpg"alt="Bride holding a wedding flower bouquet">
+             
+        <div class="hero-content">
+             <h1>Wedding Flowers, Made for you</h1>
+                <p>Your vision, beautifully brought to life</p>
+                <a href="collections.html">Explore our Collections</a>
+                <!--Carousel indicators-->
+        </div>
+        </section>
+
+        <!--Collection Section-->
+         <section class="collection-section">
+            <h2 id="collections">Explore our Collections</h2>
+            <div class="collection-buttons">
+                <a href="collections.html">By Flowers</a>
+                <a href="arrangements.html">By Arrangements</a>
+            </div>
+            <ul class="collections-grid">
+                <li class="flower-card">
+                    <a href="rose.html">
+                    <img class="rose-image" src="images/rose.jpg" alt="Bride holding a bouquet of pink and purple roses">
+                    Rose
+                    </a>
+                </li>
+                
+                <li class="flower-card">
+                    <a href="collections.html">
+                    <img class="daisy-image" src="images/daisy.jpg" alt="Woman holding a bouquet of daisies behind her back">
+                    Daisy
+                    </a>
+                </li>
+
+                <li class="flower-card">
+                    <a href="collections.html">
+                    <img class="lily-image" src="images/lily.jpg" alt="Close-up of a white lily flower">
+                    Lily
+                    </a>
+                </li>
+                
+                <li class="flower-card">
+                    <a href="collections.html">
+                    <img class="peony-image" src="images/peony.jpg" alt="Close-up of a pink peony flower">
+                    Peony
+                    </a>
+                </li>
+            </ul>
+             <a class="collections-cta" href="collections.html">Explore collections</a>
+        </section>
+                
+        <!--Wedding Highlights video section-->
+        <section class="wedding-highlights-section">
+            <div class="video-container">
+                <img src="images/wedding-highlights.jpg" alt="Bride and groom holding a wedding bouquet">
+            </div>
+
+        <h2 id="highlights">Wedding Highlights</h2>
+        <a class="book-consultation" href="contact.html">Book a Consultation</a>
+   
+        </section>
+
+        <!--Client Testimonials Section-->
+        <section class="client-testimonial"> 
+            <h2 id="testimonials">Client Testimonials</h2>
+              <div class="testimonial-content">
+                <img class="testimonial-image" src="images/testimonial.jpg" alt="Wedding couple">
+            <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta efficitur justo quis volutpat. Integer vitae maximus eros, et pretium metus.</p>
+            </blockquote>
+            <!--Carousel indicators-->
+            </div>
+        </section>
+    </main>
+
+     <footer>
+        <div class="footer-row">
+
+            <div class="footer-column">
+                <img class="footer-logo"
+                 src="images/BB-logo-black.png"
+                 alt="Bellis Blossom logo">
+
+                <h3>Address:</h3>
+                <address>Nepean, Ottawa</address>  
+
+                <h3>Contact Us:</h3>
+            <p>Contact information</p>
+        </div>
+        
+            <div class="footer-column">
+                <div class="footer-links">
+                    <nav class="footer-nav" aria-label="Collections">
+                    <h3>Collections</h3>
+                    <a href="#">Flowers</a>
+                    <a href="#">Arrangements</a>
+                </nav>
+
+                <nav class="footer-nav" aria-label="Projects">
+                    <h3>Projects</h3>
+                    <a href="#">Indoor</a>
+                    <a href="#">Outdoor</a>
+                </nav>
+            </div>
+
+            <div class="socialmedia">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Youtube</a>
+            </div>
+
+            <p>&copy; 2026 Bellis Blossom. All rights reserved.</p>
+        </div>
+
+        <div class="footer-column">
+            <h2>Stay connected with us!</h2>
+
+            <form>
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+
+        </div>
+    </footer>  
+    
+</body>
+</html>
