@@ -28,8 +28,8 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 56px;
-    line-height: 70px;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.25;
     font-weight: 700;
 }
 
@@ -52,7 +52,7 @@ p {
 
 img {
     max-width: 100%;
-    display: block;
+    height: auto;
 }
 
 .site-header {
@@ -82,11 +82,10 @@ img {
     height: auto;
 }
 
-/* Flexbox to align nav links horizontally */
 .nav {
     display:flex;
-    align-items: center;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .nav a {
@@ -105,24 +104,23 @@ img {
 
 .hero-section {
     display: grid;
-    grid-template-areas: "hero";
+    grid-template-areas: "image" "content";
     max-width: 1290px;
     margin: 0 auto;
 }
 
 .hero-image {
-    grid-area: hero;
+    grid-area: image;
     width: 100%;
-    height: 745px;
-    object-fit: cover;
+    height: auto;
 }
 
 .hero-content {
-    grid-area: hero;
-    width: 491px;
-    height: 567px;
-    padding: 40px;
-    margin-right: 60px;
+    grid-area: content;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-right: 0;
     background-color: #F7F3ED;
     text-align: center;
     align-self: center;
@@ -150,34 +148,46 @@ img {
 
 .collection-section {
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     max-width: 1278px;
     width: 100%;
     margin: 0 auto;
-    padding: 48px 0 60px;
+    padding: 48px 20px 60px;
 }
 
 #collections {
-    grid-column: 1 / span 2;
+    grid-column: 1;
 }
 
 .collection-section h2 {
     margin: 0 0 24px;
 }
 
-/* Grid to arrange flower cards into columns */
+/* Grid to arrange flower cards into columns based on viewport */
 .collections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-column: 1 / span 2;
+    grid-template-columns: 1fr;
+    grid-column: 1;
     gap: 40px 70px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+@media (min-width: 750px) {
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .collections-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .collection-buttons {
-    grid-column: 1 / span 2;
+    grid-column: 1;
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -192,7 +202,7 @@ img {
 }
 
 .collections-cta {
-    grid-column: 1 / span 2;
+    grid-column: 1;
     justify-self: center;
     background-color: #F2C94C;
     color: #030303;
@@ -207,13 +217,7 @@ img {
 
 .flower-card {
     min-width: 0;
-}
-
-.flower-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    margin-bottom: 12px;
+    container-type: inline-size;
 }
 
 .flower-card a {
@@ -223,6 +227,19 @@ img {
     line-height: 30px;
     color: #030303;
     text-decoration: none;
+}
+
+@container (min-width: 300px) {
+    .flower-card a {
+        font-size: 26px;
+    }
+}
+
+.flower-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-bottom: 12px;
 }
 
 .flower-card a:hover, .flower-card a:focus {
@@ -290,7 +307,7 @@ img {
 }
 
 .client-testimonial {
-    padding: 80px 60px;
+    padding: 40px 20px;
     background-color: #F7F3ED;
 }
 
@@ -301,10 +318,22 @@ img {
 
 .testimonial-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 30px;
 }
+
+/*Desktop*/
+@media (min-width: 900px) {
+    .testimonial-content {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .client-testimonial {
+        padding: 80px 60px;
+    }
 
 .testimonial-image {
     width: 315px;
@@ -315,7 +344,7 @@ img {
 }
 
 .testimonial-content blockquote {
-    max-width: 600px;
+    max-width: 65ch;
     margin: 0;
 }
 
@@ -341,9 +370,8 @@ footer {
 
 .footer-row {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+    flex-direction:column;
+    gap: 30px;
 }
 
 .footer-column {
